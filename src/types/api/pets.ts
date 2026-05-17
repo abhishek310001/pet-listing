@@ -12,4 +12,5 @@ export interface Pet {
 export interface PetFilters {
   species: PetSpecies | "";
   status: PetStatus | "";
+  name: string;
 }

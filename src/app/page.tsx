@@ -6,7 +6,7 @@ import { PetGrid } from "@/components/pets/PetGrid";
 import styles from "./page.module.css";
 
 export default function HomePage() {
-  const { pets, loading, error, filters, setSpecies, setStatus, retry } = usePets();
+  const { pets, loading, error, filters, hasActiveFilters, setSpecies, setStatus, setName, clearFilters, retry } = usePets();
 
   return (
     <main className={styles.main}>
@@ -33,8 +33,11 @@ export default function HomePage() {
       <div className={styles.content}>
         <PetFilters
           filters={filters}
+          hasActiveFilters={hasActiveFilters}
+          onNameChange={setName}
           onSpeciesChange={setSpecies}
           onStatusChange={setStatus}
+          onClear={clearFilters}
         />
         <PetGrid pets={pets} loading={loading} error={error} onRetry={retry} />
       </div>

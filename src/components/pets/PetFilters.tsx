@@ -1,3 +1,4 @@
+import { SearchInput } from "@/components/ui/SearchInput";
 import { Select } from "@/components/ui/Select";
 import { SPECIES_OPTIONS, STATUS_OPTIONS } from "@/constants/pets";
 import type { PetFilters } from "@/types/api/pets";
@@ -5,11 +6,14 @@ import styles from "./PetFilters.module.css";
 
 interface PetFiltersProps {
   filters: PetFilters;
+  hasActiveFilters: boolean;
   onSpeciesChange: (value: PetFilters["species"]) => void;
   onStatusChange: (value: PetFilters["status"]) => void;
+  onNameChange: (value: string) => void;
+  onClear: () => void;
 }
 
-export function PetFilters({ filters, onSpeciesChange, onStatusChange }: PetFiltersProps) {
+export function PetFilters({ filters, hasActiveFilters, onSpeciesChange, onStatusChange, onNameChange, onClear }: PetFiltersProps) {
   function handleSpeciesChange(value: string) {
     onSpeciesChange(value as PetFilters["species"]);
   }
@@ -20,6 +24,14 @@ export function PetFilters({ filters, onSpeciesChange, onStatusChange }: PetFilt
 
   return (
     <section className={styles.container} aria-label="Filter pets">
+      <SearchInput
+        id="name-search"
+        label="Search"
+        value={filters.name}
+        placeholder="Search by name…"
+        onChange={onNameChange}
+      />
+      <div className={styles.divider} />
       <Select
         id="species-filter"
         label="Species"
@@ -34,6 +46,11 @@ export function PetFilters({ filters, onSpeciesChange, onStatusChange }: PetFilt
         options={STATUS_OPTIONS}
         onChange={handleStatusChange}
       />
+      {hasActiveFilters && (
+        <button type="button" onClick={onClear} className={styles.clearButton}>
+          Clear filters
+        </button>
+      )}
     </section>
   );
 }
