@@ -1,0 +1,122 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #3d1f10 0%,
+    #5c2e14 40%,
+    #7a3d1a 70%,
+    #9e4f22 100%
+  );
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(232, 149, 109, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.eyebrow {
+  font-family: var(--font-family-ui);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: clamp(2rem, 5vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-inverse);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  font-family: var(--font-family-ui);
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.72);
+  line-height: var(--line-height-normal);
+}
+
+/* Decorative paw in the header */
+.headerDecor {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  opacity: 0.12;
+}
+
+.decalPaw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.decalPad {
+  width: 96px;
+  height: 84px;
+  background-color: var(--color-text-inverse);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.decalToeRow {
+  display: flex;
+  gap: 10px;
+}
+
+.decalToe {
+  width: 28px;
+  height: 32px;
+  background-color: var(--color-text-inverse);
+  border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%;
+}
+
+.content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .headerDecor {
+    display: none;
+  }
+
+  .content {
+    padding: var(--space-4);
+    gap: var(--space-4);
+  }
+}
