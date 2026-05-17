@@ -68,6 +68,12 @@ GET /api/pets?species=Dog&status=Available
 Supported `species` values: `Dog`, `Cat`, `Rabbit`  
 Supported `status` values: `Available`, `In Review`, `Pending Adoption`
 
+## If I had more time
+
+I'd build a proper **pet detail page** at `/pets/[id]` — a full profile with photo gallery, temperament tags, foster bio, and adoption history. Right now the card grid is doing double duty as both discovery and conversion surface. Splitting them would let each page do one job well: the grid for scanning, the detail page for convincing someone to apply.
+
+---
+
 ## Scripts
 
 | Command           | Description              |
