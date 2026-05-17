@@ -6,33 +6,7 @@
   gap: var(--space-4);
   padding: var(--space-8) var(--space-5);
   text-align: center;
-}
-
-.iconArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.35;
-}
-
-.pawPad {
-  width: 48px;
-  height: 42px;
-  background-color: var(--color-brand-primary);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-.toeRow {
-  display: flex;
-  gap: 6px;
-}
-
-.toe {
-  width: 14px;
-  height: 16px;
-  background-color: var(--color-brand-primary);
-  border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%;
+  color: var(--color-brand-primary);
 }
 
 .title {
@@ -40,14 +14,13 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin: 0;
+  margin-top: var(--space-2);
 }
 
 .message {
   font-family: var(--font-family-ui);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  margin: 0;
   max-width: 320px;
 }
 

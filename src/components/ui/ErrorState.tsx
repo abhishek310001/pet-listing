@@ -1,3 +1,4 @@
+import { PawDecoration } from "./PawDecoration";
 import styles from "./ErrorState.module.css";
 
 interface ErrorStateProps {
@@ -8,14 +9,7 @@ interface ErrorStateProps {
 export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
     <div className={styles.container} role="alert">
-      <div className={styles.iconArea} aria-hidden="true">
-        <div className={styles.pawPad} />
-        <div className={styles.toeRow}>
-          <div className={styles.toe} />
-          <div className={styles.toe} />
-          <div className={styles.toe} />
-        </div>
-      </div>
+      <PawDecoration size="md" opacity={0.35} />
       <h2 className={styles.title}>Something went wrong</h2>
       <p className={styles.message}>{message}</p>
       <button type="button" onClick={onRetry} className={styles.retryButton}>

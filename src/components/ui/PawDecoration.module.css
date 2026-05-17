@@ -1,0 +1,29 @@
+.paw {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toeRow {
+  display: flex;
+}
+
+/* Size: sm */
+.sm .pad  { width: 32px; height: 28px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+.sm .toeRow { gap: 4px; margin-top: 4px; }
+.sm .toe  { width: 9px; height: 10px; border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%; }
+
+/* Size: md */
+.md .pad  { width: 52px; height: 46px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+.md .toeRow { gap: 6px; margin-top: 5px; }
+.md .toe  { width: 15px; height: 17px; border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%; }
+
+/* Size: lg */
+.lg .pad  { width: 96px; height: 84px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }
+.lg .toeRow { gap: 10px; margin-top: 10px; }
+.lg .toe  { width: 28px; height: 32px; border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%; }
+
+.pad,
+.toe {
+  background-color: currentColor;
+}

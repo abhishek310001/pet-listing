@@ -69,6 +69,11 @@
   /* Transitions */
   --transition-fast: 150ms ease;
   --transition-normal: 250ms ease;
+
+  /* Header */
+  --color-header-dark:  #3d1f10;
+  --color-header-mid:   #5c2e14;
+  --color-header-light: #9e4f22;
 }
 
 *,

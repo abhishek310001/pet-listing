@@ -13,7 +13,14 @@ interface PetFiltersProps {
   onClear: () => void;
 }
 
-export function PetFilters({ filters, hasActiveFilters, onSpeciesChange, onStatusChange, onNameChange, onClear }: PetFiltersProps) {
+export function PetFilters({
+  filters,
+  hasActiveFilters,
+  onSpeciesChange,
+  onStatusChange,
+  onNameChange,
+  onClear,
+}: PetFiltersProps) {
   function handleSpeciesChange(value: string) {
     onSpeciesChange(value as PetFilters["species"]);
   }

@@ -27,3 +27,9 @@ export const STATUS_COLORS: Record<PetStatus, string> = {
   "In Review":        "var(--color-status-review)",
   "Pending Adoption": "var(--color-status-pending)",
 };
+
+export const SPECIES_ICONS: Record<PetSpecies, string> = {
+  Dog:    "🐕",
+  Cat:    "🐈",
+  Rabbit: "🐇",
+};

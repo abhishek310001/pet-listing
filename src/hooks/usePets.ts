@@ -5,8 +5,10 @@ import type { Pet, PetFilters } from "@/types/api/pets";
 import type { ApiSuccessResponse, ApiErrorResponse } from "@/types/common/api";
 import { isApiError } from "@/types/common/api";
 import { useDebounce } from "./useDebounce";
+import { MOCK_PETS } from "@/constants/pets";
 
 const NAME_DEBOUNCE_MS = 300;
+const TOTAL_PETS = MOCK_PETS.length;
 
 interface UsePetsState {
   pets: Pet[];
@@ -16,6 +18,7 @@ interface UsePetsState {
 
 export interface UsePetsReturn extends UsePetsState {
   filters: PetFilters;
+  total: number;
   hasActiveFilters: boolean;
   setSpecies: (value: PetFilters["species"]) => void;
   setStatus: (value: PetFilters["status"]) => void;
@@ -88,6 +91,7 @@ export function usePets(): UsePetsReturn {
   return {
     ...state,
     filters,
+    total: TOTAL_PETS,
     hasActiveFilters,
     setSpecies,
     setStatus,

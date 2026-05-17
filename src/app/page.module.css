@@ -9,10 +9,9 @@
   overflow: hidden;
   background: linear-gradient(
     135deg,
-    #3d1f10 0%,
-    #5c2e14 40%,
-    #7a3d1a 70%,
-    #9e4f22 100%
+    var(--color-header-dark) 0%,
+    var(--color-header-mid) 40%,
+    var(--color-header-light) 100%
   );
   padding: var(--space-8) var(--space-6);
   display: flex;
@@ -61,38 +60,11 @@
   line-height: var(--line-height-normal);
 }
 
-/* Decorative paw in the header */
 .headerDecor {
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  opacity: 0.12;
-}
-
-.decalPaw {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.decalPad {
-  width: 96px;
-  height: 84px;
-  background-color: var(--color-text-inverse);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-}
-
-.decalToeRow {
-  display: flex;
-  gap: 10px;
-}
-
-.decalToe {
-  width: 28px;
-  height: 32px;
-  background-color: var(--color-text-inverse);
-  border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%;
+  color: var(--color-text-inverse);
 }
 
 .content {
@@ -103,7 +75,7 @@
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
 @media (max-width: 640px) {

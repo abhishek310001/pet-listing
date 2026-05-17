@@ -1,18 +1,28 @@
+import { memo } from "react";
 import { Badge } from "@/components/ui/Badge";
-import { STATUS_COLORS } from "@/constants/pets";
+import { SPECIES_ICONS, STATUS_COLORS } from "@/constants/pets";
 import type { Pet } from "@/types/api/pets";
 import styles from "./PetCard.module.css";
 
 interface PetCardProps {
   pet: Pet;
+  index: number;
 }
 
-export function PetCard({ pet }: PetCardProps) {
+export const PetCard = memo(function PetCard({ pet, index }: PetCardProps) {
   return (
-    <article className={styles.card}>
+    <article
+      className={styles.card}
+      style={{ animationDelay: `${index * 60}ms` }}
+    >
       <div className={styles.accent} />
       <div className={styles.body}>
-        <h2 className={styles.name}>{pet.name}</h2>
+        <div className={styles.nameRow}>
+          <span className={styles.speciesIcon} aria-label={pet.species}>
+            {SPECIES_ICONS[pet.species]}
+          </span>
+          <h2 className={styles.name}>{pet.name}</h2>
+        </div>
         <hr className={styles.divider} />
         <dl className={styles.fields}>
           <div className={styles.field}>
@@ -30,4 +40,4 @@ export function PetCard({ pet }: PetCardProps) {
       </div>
     </article>
   );
-}
+});
